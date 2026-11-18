@@ -9,8 +9,8 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <!-- KaTeX CSS i JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 
     <!-- Font Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,18 +19,23 @@
         :root {
             --bg-main: #f8fafc;
             --bg-card: #ffffff;
-            --border-color: #e2e8f0;
+            --bg-subtle: #f1f5f9;
+            --border-color: #cbd5e1;
             --text-main: #0f172a;
-            --text-muted: #64748b;
+            --text-muted: #475569;
             --noble-color: #d97706;
             --noble-bg: #f59e0b;
             --other-color: #2563eb;
             --other-bg: #3b82f6;
+            --core-electron: #0284c7;
+            --valence-electron: #f59e0b;
+            --orbit-stroke: #94a3b8;
         }
 
         html.dark {
             --bg-main: #0f172a;
             --bg-card: #1e293b;
+            --bg-subtle: #0f172a;
             --border-color: #334155;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -38,6 +43,9 @@
             --noble-bg: #d97706;
             --other-color: #60a5fa;
             --other-bg: #2563eb;
+            --core-electron: #38bdf8;
+            --valence-electron: #fbbf24;
+            --orbit-stroke: #475569;
         }
 
         * {
@@ -60,7 +68,7 @@
         header {
             background-color: var(--bg-card);
             border-bottom: 1px solid var(--border-color);
-            padding: 1rem 1.5rem;
+            padding: 0.85rem 1.5rem;
             position: sticky;
             top: 0;
             z-index: 50;
@@ -68,7 +76,7 @@
         }
 
         .header-container {
-            max-width: 1280px;
+            max-width: 1320px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -100,7 +108,7 @@
         }
 
         .brand-text h1 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 800;
         }
 
@@ -108,24 +116,26 @@
             background-color: var(--bg-main);
             border: 1px solid var(--border-color);
             color: var(--text-main);
-            padding: 0.6rem;
+            padding: 0.55rem 0.75rem;
             border-radius: 0.75rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            font-weight: 600;
         }
 
         /* Contingut Principal */
         main {
-            max-width: 1280px;
+            max-width: 1320px;
             width: 100%;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 1.25rem 1.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.15rem;
         }
 
         /* Panell Explicatiu */
@@ -133,10 +143,10 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 1rem;
-            padding: 1.5rem;
+            padding: 1.15rem 1.4rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .info-header {
@@ -144,11 +154,11 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .info-title {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -159,13 +169,14 @@
             background: linear-gradient(135deg, #2563eb, #4f46e5);
             color: white;
             font-weight: 700;
-            padding: 0.75rem 1.25rem;
+            padding: 0.6rem 1.1rem;
             border-radius: 0.75rem;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.88rem;
             transition: transform 0.2s, opacity 0.2s;
         }
 
@@ -176,30 +187,30 @@
         .legend-bar {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            font-size: 0.875rem;
-            padding-top: 1rem;
+            gap: 1.35rem;
+            font-size: 0.84rem;
+            padding-top: 0.75rem;
             border-top: 1px solid var(--border-color);
         }
 
         .legend-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.45rem;
         }
 
         .legend-box {
-            width: 1rem;
-            height: 1rem;
+            width: 0.95rem;
+            height: 0.95rem;
             border-radius: 0.25rem;
         }
 
-        /* MARC DE DETALL (A DALT) */
+        /* MARC DE DETALL INTERMEDI (Configuració + 3 Àtoms de Bohr) */
         .detail-card {
             background-color: var(--bg-card);
             border: 2px solid var(--border-color);
             border-radius: 1rem;
-            padding: 1.5rem;
+            padding: 1.25rem 1.4rem;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
         }
 
@@ -208,32 +219,38 @@
             align-items: center;
             gap: 1rem;
             color: var(--text-muted);
+            padding: 0.75rem 0;
         }
 
-        .detail-grid {
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .detail-layout {
+                grid-template-columns: minmax(370px, 1fr) minmax(490px, 540px);
+            }
+        }
+
+        .detail-left {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        @media (min-width: 768px) {
-            .detail-grid {
-                display: grid;
-                grid-template-columns: 1fr 320px;
-                align-items: center;
-            }
+            gap: 0.85rem;
         }
 
         .element-info-header {
             display: flex;
             align-items: center;
-            gap: 1.25rem;
+            gap: 1rem;
         }
 
         .big-symbol-box {
-            width: 4.5rem;
-            height: 4.5rem;
-            border-radius: 1rem;
+            width: 4.1rem;
+            height: 4.1rem;
+            border-radius: 0.9rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -241,52 +258,69 @@
             color: white;
             font-weight: 800;
             box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            flex-shrink: 0;
         }
 
         .symbol-number {
-            font-size: 0.75rem;
-            opacity: 0.9;
+            font-size: 0.72rem;
+            opacity: 0.92;
         }
 
         .symbol-name {
-            font-size: 1.75rem;
+            font-size: 1.6rem;
             line-height: 1;
         }
 
-        /* Estils de la taula de configuració electrònica en català i enganxada a l'esquerra */
         .config-table {
-            margin-top: 1rem;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.35rem;
         }
 
         .config-row {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            align-items: baseline;
+            gap: 0.65rem;
+            flex-wrap: wrap;
         }
 
         .config-label {
-            width: 180px;
+            width: 175px;
             font-weight: 600;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.86rem;
             flex-shrink: 0;
         }
 
         .config-value {
-            font-family: monospace;
-            font-size: 1.05rem;
+            font-size: 0.98rem;
         }
 
         .didactic-box {
-            background-color: var(--bg-main);
+            background-color: var(--bg-subtle);
             border: 1px solid var(--border-color);
             border-radius: 0.75rem;
-            padding: 1rem;
-            font-size: 0.875rem;
-            line-height: 1.5;
+            padding: 0.75rem 0.95rem;
+            font-size: 0.85rem;
+            line-height: 1.45;
+        }
+
+        /* Contenidor dels 3 àtoms de Bohr a la dreta */
+        .bohr-trio-box {
+            background-color: var(--bg-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 0.9rem;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bohr-trio-svg {
+            width: 100%;
+            height: 225px;
+            display: block;
         }
 
         /* Vistes de la Taula Periòdica */
@@ -294,7 +328,7 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 1rem;
-            padding: 1.5rem;
+            padding: 1.25rem 1.4rem;
             overflow-x: auto;
         }
 
@@ -305,7 +339,7 @@
         /* Graella Tradicional */
         .periodic-grid {
             display: grid;
-            grid-template-columns: repeat(18, minmax(46px, 1fr));
+            grid-template-columns: repeat(18, minmax(44px, 1fr));
             gap: 6px;
             min-width: 750px;
         }
@@ -318,10 +352,9 @@
             padding-bottom: 0.5rem;
         }
 
-        /* Targeta simplificada: només símbol i icona de gas noble */
         .element-btn {
             border: none;
-            border-radius: 0.75rem;
+            border-radius: 0.7rem;
             color: white;
             font-weight: 700;
             cursor: pointer;
@@ -346,13 +379,13 @@
         }
 
         .grid-btn {
-            height: 52px;
+            height: 50px;
             width: 100%;
         }
 
         .linear-btn {
-            height: 60px;
-            width: 50px;
+            height: 58px;
+            width: 48px;
             flex-shrink: 0;
         }
 
@@ -365,7 +398,7 @@
         }
 
         .btn-symbol {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 800;
             line-height: 1;
         }
@@ -381,9 +414,9 @@
         footer {
             background-color: var(--bg-card);
             border-top: 1px solid var(--border-color);
-            padding: 1rem;
+            padding: 0.9rem;
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
         }
     </style>
@@ -407,12 +440,13 @@
 
             <!-- Botó Mode Lluminós / Fosc -->
             <button id="themeToggle" class="theme-btn" aria-label="Canviar tema">
-                <svg id="sunIcon" class="hidden" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                <svg id="sunIcon" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" clip-rule="evenodd"></path>
                 </svg>
-                <svg id="moonIcon" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                <svg id="moonIcon" class="hidden" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                 </svg>
+                <span id="themeLabel">Mode clar</span>
             </button>
         </div>
     </header>
@@ -430,8 +464,8 @@
                     <span>⇄ Reorganitzar en 1 sola línia</span>
                 </button>
             </div>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
-                En aquesta activitat observem com els àtoms van afegint electrons a la seva capa de valència a mesura que augmenta el nombre atòmic (Z). Fixa't com la configuració electrònica es va <strong>apropant a la d'un Gas Noble</strong> fins que la completa (capa plena: s² o s²p⁶). Un cop s'assoleix el gas noble, el següent element comença un nou nivell energètic!
+            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-muted);">
+                Observa com els àtoms van afegint electrons a la seva capa de valència a mesura que augmenta el nombre atòmic (Z). Compara l'àtom seleccionat (al centre) amb el <strong>gas noble anterior</strong> (a l'esquerra) i el <strong>gas noble següent</strong> (a la dreta) per veure quants electrons li sobren o li falten per tenir una capa plena.
             </p>
             <div class="legend-bar">
                 <div class="legend-item">
@@ -443,22 +477,22 @@
                     <span>Resta d'Elements (Z = 1 a 36)</span>
                 </div>
                 <div class="legend-item">
-                    <span style="color: #0284c7; font-weight: 700;">■</span> Gas Noble Anterior / Core
+                    <span style="color: var(--core-electron); font-weight: 800;">●</span> Electrons de capes completes / Gas Noble
                 </div>
                 <div class="legend-item">
-                    <span style="color: #d97706; font-weight: 700;">■</span> Electrons en Ompliment
+                    <span style="color: var(--valence-electron); font-weight: 800;">●</span> Electrons de valència (en ompliment)
                 </div>
             </div>
         </section>
 
-        <!-- MARC DE DETALL (SITUAT A DALT) -->
+        <!-- MARC DE DETALL (Configuracions a l'esquerra + 3 Àtoms de Bohr a la dreta) -->
         <section id="detailPanel" class="detail-card">
             <div id="detailContent">
                 <div class="detail-placeholder">
                     <div style="font-size: 2rem;">👉</div>
                     <div>
-                        <h3 style="font-size: 1.1rem; font-weight: 700;">Fes clic sobre qualsevol element</h3>
-                        <p style="font-size: 0.875rem;">Selecciona un element per consultar la seva configuració electrònica abreujada i expandida.</p>
+                        <h3 style="font-size: 1.05rem; font-weight: 700;">Fes clic sobre qualsevol element</h3>
+                        <p style="font-size: 0.875rem;">Selecciona un element per consultar la seva configuració electrònica i comparar el seu model de Bohr amb el gas noble precedent i el següent.</p>
                     </div>
                 </div>
             </div>
@@ -466,13 +500,13 @@
 
         <!-- TAULA PERIÒDICA TRADICIONAL -->
         <section id="traditionalView" class="view-section">
-            <h3 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; font-weight: 700;">Disposició Habitual (Taula Periòdica Z = 1 a 36)</h3>
+            <h3 style="font-size: 0.82rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.85rem; font-weight: 700;">Disposició Habitual (Taula Periòdica Z = 1 a 36)</h3>
             <div id="gridContainer" class="periodic-grid"></div>
         </section>
 
         <!-- LÍNIA HORITZONTAL ÚNICA -->
         <section id="linearView" class="view-section hidden">
-            <h3 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; font-weight: 700;">Línia Contínua Ordenada per Nombre Atòmic (Z)</h3>
+            <h3 style="font-size: 0.82rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.85rem; font-weight: 700;">Línia Contínua Ordenada per Nombre Atòmic (Z)</h3>
             <div id="linearContainer" class="linear-row"></div>
         </section>
 
@@ -485,198 +519,255 @@
 
     <!-- Lògica de l'Aplicació -->
     <script>
+        /**
+         * Funcions segures d'involucració KaTeX
+         */
+        function mInline(tex) {
+            if (window.katex) {
+                return katex.renderToString(tex, { throwOnError: false, displayMode: false });
+            }
+            return tex;
+        }
+
+        function mBlock(tex) {
+            if (window.katex) {
+                return katex.renderToString(tex, { throwOnError: false, displayMode: true });
+            }
+            return tex;
+        }
+
+        /**
+         * Dades completes dels elements Z = 1 a 36 amb distribució per capes de Bohr
+         */
         const elementsData = [
-            { z: 1, symbol: "H", name: "Hidrogen", period: 1, group: 1, noble: false, 
-              config: "\\color{#d97706}{1s^1}", 
-              expanded: "\\color{#d97706}{1s^1}", 
+            { z: 1, symbol: "H", name: "Hidrogen", period: 1, group: 1, noble: false,
+              shells: [1], coreShells: [],
+              config: "\\color{#d97706}{1s^1}",
+              expanded: "\\color{#d97706}{1s^1}",
               desc: "1 electró. Li'n falta 1 per completar la capa de l'Heli." },
             
-            { z: 2, symbol: "He", name: "Heli", period: 1, group: 18, noble: true, 
-              config: "\\color{#d97706}{1s^2}", 
-              expanded: "\\color{#d97706}{1s^2}", 
-              desc: "¡GAS NOBLE! Capa 1 completada (s²). Estabilitat màxima." },
+            { z: 2, symbol: "He", name: "Heli", period: 1, group: 18, noble: true,
+              shells: [2], coreShells: [2],
+              config: "\\color{#0284c7}{1s^2}",
+              expanded: "\\color{#0284c7}{1s^2}",
+              desc: "GAS NOBLE! Capa 1 completada (1s²). Estabilitat màxima." },
 
-            { z: 3, symbol: "Li", name: "Liti", period: 2, group: 1, noble: false, 
-              config: "\\color{#0284c7}{[He]}\\; \\color{#d97706}{2s^1}", 
-              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^1}", 
+            { z: 3, symbol: "Li", name: "Liti", period: 2, group: 1, noble: false,
+              shells: [2, 1], coreShells: [2],
+              config: "\\color{#0284c7}{[\\text{He}]}\\; \\color{#d97706}{2s^1}",
+              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^1}",
               desc: "Supera l'Heli. Inicia el 2n període afegint 1 electró a 2s." },
 
-            { z: 4, symbol: "Be", name: "Beril·li", period: 2, group: 2, noble: false, 
-              config: "\\color{#0284c7}{[He]}\\; \\color{#d97706}{2s^2}", 
-              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2}", 
-              desc: "Subnivell 2s completat." },
+            { z: 4, symbol: "Be", name: "Beril·li", period: 2, group: 2, noble: false,
+              shells: [2, 2], coreShells: [2],
+              config: "\\color{#0284c7}{[\\text{He}]}\\; \\color{#d97706}{2s^2}",
+              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2}",
+              desc: "Subnivell 2s completat (2 electrons de valència)." },
 
-            { z: 5, symbol: "B", name: "Bor", period: 2, group: 13, noble: false, 
-              config: "\\color{#0284c7}{[He]}\\; \\color{#d97706}{2s^2 2p^1}", 
-              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^1}", 
-              desc: "Comença a omplir-se el subnivell 2p." },
+            { z: 5, symbol: "B", name: "Bor", period: 2, group: 13, noble: false,
+              shells: [2, 3], coreShells: [2],
+              config: "\\color{#0284c7}{[\\text{He}]}\\; \\color{#d97706}{2s^2 2p^1}",
+              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^1}",
+              desc: "Comença a omplir-se el subnivell 2p (3 electrons a la capa 2)." },
 
-            { z: 6, symbol: "C", name: "Carboni", period: 2, group: 14, noble: false, 
-              config: "\\color{#0284c7}{[He]}\\; \\color{#d97706}{2s^2 2p^2}", 
-              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^2}", 
-              desc: "A mig camí de la configuració de Neó." },
+            { z: 6, symbol: "C", name: "Carboni", period: 2, group: 14, noble: false,
+              shells: [2, 4], coreShells: [2],
+              config: "\\color{#0284c7}{[\\text{He}]}\\; \\color{#d97706}{2s^2 2p^2}",
+              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^2}",
+              desc: "A mig camí entre l'Heli i el Neó (4 electrons externs)." },
 
-            { z: 7, symbol: "N", name: "Nitrogen", period: 2, group: 15, noble: false, 
-              config: "\\color{#0284c7}{[He]}\\; \\color{#d97706}{2s^2 2p^3}", 
-              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^3}", 
-              desc: "5 electrons a la capa de valència." },
+            { z: 7, symbol: "N", name: "Nitrogen", period: 2, group: 15, noble: false,
+              shells: [2, 5], coreShells: [2],
+              config: "\\color{#0284c7}{[\\text{He}]}\\; \\color{#d97706}{2s^2 2p^3}",
+              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^3}",
+              desc: "5 electrons a la capa de valència. Li'n falten 3 per arribar al Neó." },
 
-            { z: 8, symbol: "O", name: "Oxigen", period: 2, group: 16, noble: false, 
-              config: "\\color{#0284c7}{[He]}\\; \\color{#d97706}{2s^2 2p^4}", 
-              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^4}", 
-              desc: "Li falten només 2 electrons per arribar al Neó." },
+            { z: 8, symbol: "O", name: "Oxigen", period: 2, group: 16, noble: false,
+              shells: [2, 6], coreShells: [2],
+              config: "\\color{#0284c7}{[\\text{He}]}\\; \\color{#d97706}{2s^2 2p^4}",
+              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^4}",
+              desc: "Li falten només 2 electrons per arribar a la capa plena del Neó." },
 
-            { z: 9, symbol: "F", name: "Fluor", period: 2, group: 17, noble: false, 
-              config: "\\color{#0284c7}{[He]}\\; \\color{#d97706}{2s^2 2p^5}", 
-              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^5}", 
-              desc: "Molt reactiu. A 1 sol electró d'assolir la capa plena." },
+            { z: 9, symbol: "F", name: "Fluor", period: 2, group: 17, noble: false,
+              shells: [2, 7], coreShells: [2],
+              config: "\\color{#0284c7}{[\\text{He}]}\\; \\color{#d97706}{2s^2 2p^5}",
+              expanded: "\\color{#0284c7}{1s^2}\\; \\color{#d97706}{2s^2 2p^5}",
+              desc: "Molt reactiu. A 1 sol electró d'assolir la capa plena del Neó." },
 
-            { z: 10, symbol: "Ne", name: "Neó", period: 2, group: 18, noble: true, 
-              config: "\\color{#d97706}{[He]\\; 2s^2 2p^6}", 
-              expanded: "\\color{#d97706}{1s^2 2s^2 2p^6}", 
-              desc: "¡GAS NOBLE! Capa 2 completa (8 electrons de valència)." },
+            { z: 10, symbol: "Ne", name: "Neó", period: 2, group: 18, noble: true,
+              shells: [2, 8], coreShells: [2, 8],
+              config: "\\color{#0284c7}{[\\text{He}]\\; 2s^2 2p^6}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}",
+              desc: "GAS NOBLE! Capa 2 completa (8 electrons de valència)." },
 
-            { z: 11, symbol: "Na", name: "Sodi", period: 3, group: 1, noble: false, 
-              config: "\\color{#0284c7}{[Ne]}\\; \\color{#d97706}{3s^1}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^1}", 
-              desc: "Supera el Neó i comença el nivell 3 de valència." },
+            { z: 11, symbol: "Na", name: "Sodi", period: 3, group: 1, noble: false,
+              shells: [2, 8, 1], coreShells: [2, 8],
+              config: "\\color{#0284c7}{[\\text{Ne}]}\\; \\color{#d97706}{3s^1}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^1}",
+              desc: "Supera el Neó i comença el nivell 3 amb 1 electró solitari." },
 
-            { z: 12, symbol: "Mg", name: "Magnesi", period: 3, group: 2, noble: false, 
-              config: "\\color{#0284c7}{[Ne]}\\; \\color{#d97706}{3s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2}", 
-              desc: "Subnivell 3s complet." },
+            { z: 12, symbol: "Mg", name: "Magnesi", period: 3, group: 2, noble: false,
+              shells: [2, 8, 2], coreShells: [2, 8],
+              config: "\\color{#0284c7}{[\\text{Ne}]}\\; \\color{#d97706}{3s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2}",
+              desc: "Subnivell 3s complet (2 electrons de valència)." },
 
-            { z: 13, symbol: "Al", name: "Alumini", period: 3, group: 13, noble: false, 
-              config: "\\color{#0284c7}{[Ne]}\\; \\color{#d97706}{3s^2 3p^1}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^1}", 
-              desc: "Comença a omplir el subnivell 3p." },
+            { z: 13, symbol: "Al", name: "Alumini", period: 3, group: 13, noble: false,
+              shells: [2, 8, 3], coreShells: [2, 8],
+              config: "\\color{#0284c7}{[\\text{Ne}]}\\; \\color{#d97706}{3s^2 3p^1}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^1}",
+              desc: "Comença a omplir el subnivell 3p (3 electrons externs)." },
 
-            { z: 14, symbol: "Si", name: "Silici", period: 3, group: 14, noble: false, 
-              config: "\\color{#0284c7}{[Ne]}\\; \\color{#d97706}{3s^2 3p^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^2}", 
+            { z: 14, symbol: "Si", name: "Silici", period: 3, group: 14, noble: false,
+              shells: [2, 8, 4], coreShells: [2, 8],
+              config: "\\color{#0284c7}{[\\text{Ne}]}\\; \\color{#d97706}{3s^2 3p^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^2}",
               desc: "4 electrons de valència a la capa 3." },
 
-            { z: 15, symbol: "P", name: "Fòsfor", period: 3, group: 15, noble: false, 
-              config: "\\color{#0284c7}{[Ne]}\\; \\color{#d97706}{3s^2 3p^3}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^3}", 
-              desc: "5 electrons externs." },
+            { z: 15, symbol: "P", name: "Fòsfor", period: 3, group: 15, noble: false,
+              shells: [2, 8, 5], coreShells: [2, 8],
+              config: "\\color{#0284c7}{[\\text{Ne}]}\\; \\color{#d97706}{3s^2 3p^3}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^3}",
+              desc: "5 electrons externs. Li'n falten 3 per arribar a l'Argó." },
 
-            { z: 16, symbol: "S", name: "Sofre", period: 3, group: 16, noble: false, 
-              config: "\\color{#0284c7}{[Ne]}\\; \\color{#d97706}{3s^2 3p^4}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^4}", 
-              desc: "Li falten 2 electrons per arribar a l'Argó." },
+            { z: 16, symbol: "S", name: "Sofre", period: 3, group: 16, noble: false,
+              shells: [2, 8, 6], coreShells: [2, 8],
+              config: "\\color{#0284c7}{[\\text{Ne}]}\\; \\color{#d97706}{3s^2 3p^4}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^4}",
+              desc: "Li falten 2 electrons per arribar a la capa completa de l'Argó." },
 
-            { z: 17, symbol: "Cl", name: "Clor", period: 3, group: 17, noble: false, 
-              config: "\\color{#0284c7}{[Ne]}\\; \\color{#d97706}{3s^2 3p^5}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^5}", 
+            { z: 17, symbol: "Cl", name: "Clor", period: 3, group: 17, noble: false,
+              shells: [2, 8, 7], coreShells: [2, 8],
+              config: "\\color{#0284c7}{[\\text{Ne}]}\\; \\color{#d97706}{3s^2 3p^5}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6}\\; \\color{#d97706}{3s^2 3p^5}",
               desc: "A només 1 electró del gas noble Argó." },
 
-            { z: 18, symbol: "Ar", name: "Argó", period: 3, group: 18, noble: true, 
-              config: "\\color{#d97706}{[Ne]\\; 3s^2 3p^6}", 
-              expanded: "\\color{#d97706}{1s^2 2s^2 2p^6 3s^2 3p^6}", 
-              desc: "¡GAS NOBLE! Capa 3 completa (3s² 3p⁶)." },
+            { z: 18, symbol: "Ar", name: "Argó", period: 3, group: 18, noble: true,
+              shells: [2, 8, 8], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ne}]\\; 3s^2 3p^6}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}",
+              desc: "GAS NOBLE! Capa 3 completa (3s² 3p⁶)." },
 
-            { z: 19, symbol: "K", name: "Potassi", period: 4, group: 1, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{4s^1}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{4s^1}", 
-              desc: "Supera l'Argó. Comença el 4t període." },
+            { z: 19, symbol: "K", name: "Potassi", period: 4, group: 1, noble: false,
+              shells: [2, 8, 8, 1], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{4s^1}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{4s^1}",
+              desc: "Supera l'Argó. Comença el 4t període amb 1 electró a 4s." },
 
-            { z: 20, symbol: "Ca", name: "Calci", period: 4, group: 2, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{4s^2}", 
-              desc: "Subnivell 4s completat." },
+            { z: 20, symbol: "Ca", name: "Calci", period: 4, group: 2, noble: false,
+              shells: [2, 8, 8, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{4s^2}",
+              desc: "Subnivell 4s completat (2 electrons externs)." },
 
-            { z: 21, symbol: "Sc", name: "Escandi", period: 4, group: 3, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^1 4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^1 4s^2}", 
-              desc: "S'inicia l'ompliment del subnivell 3d." },
+            { z: 21, symbol: "Sc", name: "Escandi", period: 4, group: 3, noble: false,
+              shells: [2, 8, 9, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^1 4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^1 4s^2}",
+              desc: "S'inicia l'ompliment del subnivell intern 3d." },
 
-            { z: 22, symbol: "Ti", name: "Titani", period: 4, group: 4, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^2 4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^2 4s^2}", 
-              desc: "Metall de transició (3d²)." },
+            { z: 22, symbol: "Ti", name: "Titani", period: 4, group: 4, noble: false,
+              shells: [2, 8, 10, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^2 4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^2 4s^2}",
+              desc: "Metall de transició (3d² 4s²)." },
 
-            { z: 23, symbol: "V", name: "Vanadi", period: 4, group: 5, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^3 4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^3 4s^2}", 
+            { z: 23, symbol: "V", name: "Vanadi", period: 4, group: 5, noble: false,
+              shells: [2, 8, 11, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^3 4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^3 4s^2}",
               desc: "Continua l'ompliment de 3d." },
 
-            { z: 24, symbol: "Cr", name: "Crom", period: 4, group: 6, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^5 4s^1}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^5 4s^1}", 
-              desc: "Anomalia d'estabilitat: semicapa d plena." },
+            { z: 24, symbol: "Cr", name: "Crom", period: 4, group: 6, noble: false,
+              shells: [2, 8, 13, 1], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^5 4s^1}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^5 4s^1}",
+              desc: "Anomalia d'estabilitat: semicapa d plena (3d⁵ 4s¹)." },
 
-            { z: 25, symbol: "Mn", name: "Manganès", period: 4, group: 7, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^5 4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^5 4s^2}", 
-              desc: "Semicapa 3d⁵ completa." },
+            { z: 25, symbol: "Mn", name: "Manganès", period: 4, group: 7, noble: false,
+              shells: [2, 8, 13, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^5 4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^5 4s^2}",
+              desc: "Semicapa 3d⁵ completa i 4s² ple." },
 
-            { z: 26, symbol: "Fe", name: "Ferro", period: 4, group: 8, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^6 4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^6 4s^2}", 
-              desc: "Metall de transició." },
+            { z: 26, symbol: "Fe", name: "Ferro", period: 4, group: 8, noble: false,
+              shells: [2, 8, 14, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^6 4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^6 4s^2}",
+              desc: "Metall de transició (3d⁶ 4s²)." },
 
-            { z: 27, symbol: "Co", name: "Cobalt", period: 4, group: 9, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^7 4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^7 4s^2}", 
+            { z: 27, symbol: "Co", name: "Cobalt", period: 4, group: 9, noble: false,
+              shells: [2, 8, 15, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^7 4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^7 4s^2}",
               desc: "Continua omplint-se el nivell 3d." },
 
-            { z: 28, symbol: "Ni", name: "Níquel", period: 4, group: 10, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^8 4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^8 4s^2}", 
-              desc: "Configuració d⁸." },
+            { z: 28, symbol: "Ni", name: "Níquel", period: 4, group: 10, noble: false,
+              shells: [2, 8, 16, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^8 4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^8 4s^2}",
+              desc: "Configuració 3d⁸ 4s²." },
 
-            { z: 29, symbol: "Cu", name: "Coure", period: 4, group: 11, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^{10} 4s^1}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^1}", 
-              desc: "Anomalia d'estabilitat: capa 3d completament plena." },
+            { z: 29, symbol: "Cu", name: "Coure", period: 4, group: 11, noble: false,
+              shells: [2, 8, 18, 1], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^{10} 4s^1}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^1}",
+              desc: "Anomalia d'estabilitat: capa 3d completament plena (18 e⁻)." },
 
-            { z: 30, symbol: "Zn", name: "Zinc", period: 4, group: 12, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^{10} 4s^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2}", 
+            { z: 30, symbol: "Zn", name: "Zinc", period: 4, group: 12, noble: false,
+              shells: [2, 8, 18, 2], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^{10} 4s^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2}",
               desc: "Subnivells 3d i 4s plens." },
 
-            { z: 31, symbol: "Ga", name: "Gal·li", period: 4, group: 13, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^1}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^1}", 
-              desc: "Comença a omplir-se el subnivell 4p." },
+            { z: 31, symbol: "Ga", name: "Gal·li", period: 4, group: 13, noble: false,
+              shells: [2, 8, 18, 3], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^1}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^1}",
+              desc: "Comença a omplir-se el subnivell 4p (3 electrons a la capa 4)." },
 
-            { z: 32, symbol: "Ge", name: "Germani", period: 4, group: 14, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^2}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^2}", 
-              desc: "4 electrons externs." },
+            { z: 32, symbol: "Ge", name: "Germani", period: 4, group: 14, noble: false,
+              shells: [2, 8, 18, 4], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^2}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^2}",
+              desc: "4 electrons externs a la capa 4." },
 
-            { z: 33, symbol: "As", name: "Arsènic", period: 4, group: 15, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^3}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^3}", 
+            { z: 33, symbol: "As", name: "Arsènic", period: 4, group: 15, noble: false,
+              shells: [2, 8, 18, 5], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^3}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^3}",
               desc: "5 electrons a la capa externa." },
 
-            { z: 34, symbol: "Se", name: "Seleni", period: 4, group: 16, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^4}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^4}", 
-              desc: "S'apropa al Criptó (li falten 2 e⁻)." },
+            { z: 34, symbol: "Se", name: "Seleni", period: 4, group: 16, noble: false,
+              shells: [2, 8, 18, 6], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^4}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^4}",
+              desc: "S'apropa al Criptó (li falten 2 electrons)." },
 
-            { z: 35, symbol: "Br", name: "Brom", period: 4, group: 17, noble: false, 
-              config: "\\color{#0284c7}{[Ar]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^5}", 
-              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^5}", 
-              desc: "A només 1 electró d'assolir la capa del Criptó." },
+            { z: 35, symbol: "Br", name: "Brom", period: 4, group: 17, noble: false,
+              shells: [2, 8, 18, 7], coreShells: [2, 8, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]}\\; \\color{#d97706}{3d^{10} 4s^2 4p^5}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6}\\; \\color{#d97706}{3d^{10} 4s^2 4p^5}",
+              desc: "A només 1 electró d'assolir la capa completa del Criptó." },
 
-            { z: 36, symbol: "Kr", name: "Criptó", period: 4, group: 18, noble: true, 
-              config: "\\color{#d97706}{[Ar]\\; 3d^{10} 4s^2 4p^6}", 
-              expanded: "\\color{#d97706}{1s^2 2s^2 2p^6 3s^2 3p^6 3d^{10} 4s^2 4p^6}", 
-              desc: "¡GAS NOBLE! Capa 4 completa (4s² 4p⁶)." }
+            { z: 36, symbol: "Kr", name: "Criptó", period: 4, group: 18, noble: true,
+              shells: [2, 8, 18, 8], coreShells: [2, 8, 18, 8],
+              config: "\\color{#0284c7}{[\\text{Ar}]\\; 3d^{10} 4s^2 4p^6}",
+              expanded: "\\color{#0284c7}{1s^2 2s^2 2p^6 3s^2 3p^6 3d^{10} 4s^2 4p^6}",
+              desc: "GAS NOBLE! Capa 4 completa (4s² 4p⁶)." }
+        ];
+
+        // Llista de gasos nobles de referència (inclòs el Xenó per quan se selecciona el Criptó)
+        const NOBLE_GASES = [
+            { z: 2,  symbol: "He", name: "Heli",    shells: [2] },
+            { z: 10, symbol: "Ne", name: "Neó",     shells: [2, 8] },
+            { z: 18, symbol: "Ar", name: "Argó",    shells: [2, 8, 8] },
+            { z: 36, symbol: "Kr", name: "Criptó",  shells: [2, 8, 18, 8] },
+            { z: 54, symbol: "Xe", name: "Xenó",    shells: [2, 8, 18, 18, 8] }
         ];
 
         let selectedZ = null;
         let isLinearView = false;
-
-        function renderMath(tex) {
-            try {
-                return katex.renderToString(tex, { throwOnError: false, displayMode: false });
-            } catch (e) {
-                return tex;
-            }
-        }
 
         function initApp() {
             renderGrid();
@@ -715,7 +806,6 @@
             });
         }
 
-        /* Targetes netes i simplificades (només el símbol i la marca del gas noble) */
         function createBtn(el, typeClass) {
             const btn = document.createElement('button');
             btn.dataset.z = el.z;
@@ -731,43 +821,182 @@
             return btn;
         }
 
-        /* Mostra les etiques en català i enganxades a les valors KaTeX */
+        /**
+         * Troba el gas noble anterior i el gas noble següent per a un element amb nombre atòmic z
+         */
+        function getNeighborNobleGases(z) {
+            let prevNoble = null;
+            let nextNoble = null;
+
+            for (let i = 0; i < NOBLE_GASES.length; i++) {
+                if (NOBLE_GASES[i].z < z) {
+                    prevNoble = NOBLE_GASES[i];
+                }
+                if (NOBLE_GASES[i].z > z && !nextNoble) {
+                    nextNoble = NOBLE_GASES[i];
+                }
+            }
+            return { prevNoble, nextNoble };
+        }
+
+        /**
+         * Genera el codi SVG d'un únic àtom de Bohr dins del trio comparatiu
+         */
+        function buildBohrAtomSVG({ cx, cy, atom, roleLabel, isCenter }) {
+            if (!atom) {
+                return `
+                    <g opacity="0.55">
+                        <circle cx="${cx}" cy="${cy}" r="34" fill="none" stroke="var(--orbit-stroke)" stroke-width="1.4" stroke-dasharray="4,4"/>
+                        <text x="${cx}" y="${cy + 4}" text-anchor="middle" fill="var(--text-muted)" font-size="11px" font-weight="600">—</text>
+                        <text x="${cx}" y="198" text-anchor="middle" fill="var(--text-muted)" font-size="10.5px" font-weight="600">${roleLabel}</text>
+                        <text x="${cx}" y="213" text-anchor="middle" fill="var(--text-muted)" font-size="10px">Cap gas noble previ</text>
+                    </g>
+                `;
+            }
+
+            const numShells = atom.shells.length;
+            // Escalat adaptat perquè fins i tot 5 capes (Xenó) càpiguen perfectament dins l'alçada
+            const baseR = isCenter ? 14 : 12;
+            const stepR = numShells >= 5 ? 11.5 : (numShells === 4 ? 13.5 : 16);
+
+            let svgParts = `<g>`;
+
+            // Cercle suau de ressaltat si és l'àtom seleccionat al centre
+            if (isCenter) {
+                const maxR = baseR + numShells * stepR + 7;
+                svgParts += `<circle cx="${cx}" cy="${cy}" r="${maxR}" fill="rgba(59, 130, 246, 0.06)" stroke="rgba(59, 130, 246, 0.25)" stroke-width="1.2" stroke-dasharray="3,3"/>`;
+            }
+
+            // Dibuix de capes i electrons
+            for (let s = 0; s < numShells; s++) {
+                const r = baseR + (s + 1) * stepR;
+                const totalInShell = atom.shells[s];
+                // Quants electrons d'aquesta capa són "core" (blaus) i quants són "sobrants/valència" (ambre)
+                const blueInShell = isCenter ? (atom.coreShells[s] || 0) : totalInShell;
+
+                svgParts += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--orbit-stroke)" stroke-width="${s === numShells - 1 ? 1.5 : 1.1}" opacity="0.85"/>`;
+
+                for (let e = 0; e < totalInShell; e++) {
+                    const angle = (2 * Math.PI * e) / totalInShell - Math.PI / 2;
+                    const ex = cx + r * Math.cos(angle);
+                    const ey = cy + r * Math.sin(angle);
+
+                    const isCore = e < blueInShell;
+                    const eColor = isCore ? 'var(--core-electron)' : 'var(--valence-electron)';
+                    const eRadius = isCore ? 3.2 : 3.8;
+
+                    svgParts += `<circle cx="${ex.toFixed(1)}" cy="${ey.toFixed(1)}" r="${eRadius}" fill="${eColor}" stroke="#0f172a" stroke-width="0.7"/>`;
+                }
+            }
+
+            // Nucli central amb símbol
+            const nucColor = isCenter ? (atom.noble ? 'var(--noble-bg)' : 'var(--other-bg)') : 'var(--noble-bg)';
+            svgParts += `
+                <circle cx="${cx}" cy="${cy}" r="${baseR}" fill="${nucColor}"/>
+                <text x="${cx}" y="${cy + 4.5}" text-anchor="middle" fill="#ffffff" font-weight="800" font-size="${isCenter ? '12px' : '11px'}">${atom.symbol}</text>
+            `;
+
+            // Etiquetes inferiors (Rol + Nom i distribució per capes)
+            const shellsText = atom.shells.join(' · ');
+            svgParts += `
+                <text x="${cx}" y="196" text-anchor="middle" fill="${isCenter ? 'var(--text-main)' : 'var(--noble-color)'}" font-size="11px" font-weight="700">
+                    ${roleLabel} (${atom.symbol}, Z=${atom.z})
+                </text>
+                <text x="${cx}" y="212" text-anchor="middle" fill="var(--text-muted)" font-size="10px" font-weight="600">
+                    Capes: ${shellsText}
+                </text>
+            </g>`;
+
+            return svgParts;
+        }
+
+        /**
+         * Construeix el panell SVG complet amb els 3 àtoms de Bohr: Precedent | Seleccionat | Següent
+         */
+        function renderBohrTrioSVG(selectedEl) {
+            const { prevNoble, nextNoble } = getNeighborNobleGases(selectedEl.z);
+
+            const leftSVG = buildBohrAtomSVG({
+                cx: 95,
+                cy: 92,
+                atom: prevNoble,
+                roleLabel: 'Gas noble anterior',
+                isCenter: false
+            });
+
+            const centerSVG = buildBohrAtomSVG({
+                cx: 270,
+                cy: 92,
+                atom: selectedEl,
+                roleLabel: 'Seleccionat',
+                isCenter: true
+            });
+
+            const rightSVG = buildBohrAtomSVG({
+                cx: 445,
+                cy: 92,
+                atom: nextNoble,
+                roleLabel: 'Gas noble següent',
+                isCenter: false
+            });
+
+            // Fletxes subtils de transició entre àtoms
+            const arrowsSVG = `
+                <g opacity="0.55" stroke="var(--text-muted)" stroke-width="1.5" fill="none">
+                    <line x1="172" y1="92" x2="188" y2="92" stroke-dasharray="2,2"/>
+                    <polyline points="176,88 171,92 176,96"/>
+                    <line x1="352" y1="92" x2="368" y2="92" stroke-dasharray="2,2"/>
+                    <polyline points="364,88 369,92 364,96"/>
+                </g>
+            `;
+
+            return `
+                <svg class="bohr-trio-svg" viewBox="0 0 540 222" preserveAspectRatio="xMidYMid meet">
+                    ${arrowsSVG}
+                    ${leftSVG}
+                    ${centerSVG}
+                    ${rightSVG}
+                </svg>
+            `;
+        }
+
         function selectElement(z) {
             selectedZ = z;
             const el = elementsData.find(item => item.z === z);
             if (!el) return;
 
             document.querySelectorAll('.element-btn').forEach(btn => {
-                if (parseInt(btn.dataset.z) === z) {
+                if (parseInt(btn.dataset.z, 10) === z) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
                 }
             });
 
-            const configHTML = renderMath(el.config);
-            const expandedHTML = renderMath(el.expanded);
+            const configHTML = mInline(el.config);
+            const expandedHTML = mInline(el.expanded);
+            const bohrTrioHTML = renderBohrTrioSVG(el);
 
             const detailContent = document.getElementById('detailContent');
             const bgClass = el.noble ? 'bg-noble' : 'bg-other';
 
             detailContent.innerHTML = `
-                <div class="detail-grid">
-                    <div>
+                <div class="detail-layout">
+                    <!-- Columna esquerra: Dades, configuracions i nota didàctica -->
+                    <div class="detail-left">
                         <div class="element-info-header">
                             <div class="big-symbol-box ${bgClass}">
                                 <span class="symbol-number">Z = ${el.z}</span>
                                 <span class="symbol-name">${el.symbol}</span>
                             </div>
                             <div>
-                                <h3 style="font-size: 1.5rem; font-weight: 800;">${el.name}</h3>
-                                <span style="font-size: 0.75rem; font-weight: 700; color: ${el.noble ? 'var(--noble-color)' : 'var(--other-color)'}">
-                                    ${el.noble ? '★ Gas Noble (Capa Plena)' : 'Element d\'ompliment'}
+                                <h3 style="font-size: 1.4rem; font-weight: 800;">${el.name}</h3>
+                                <span style="font-size: 0.78rem; font-weight: 700; color: ${el.noble ? 'var(--noble-color)' : 'var(--other-color)'}">
+                                    ${el.noble ? '★ Gas Noble (Capa Plena)' : `Període ${el.period} · Grup ${el.group}`}
                                 </span>
                             </div>
                         </div>
 
-                        <!-- Taula en català i alineada a l'esquerra -->
                         <div class="config-table">
                             <div class="config-row">
                                 <span class="config-label">Configuració abreujada:</span>
@@ -778,29 +1007,34 @@
                                 <span class="config-value">${expandedHTML}</span>
                             </div>
                         </div>
+
+                        <div class="didactic-box">
+                            <strong style="color: var(--text-main); display: inline;">💡 Aspecte didàctic:</strong>
+                            <span>${el.desc}</span>
+                        </div>
                     </div>
 
-                    <div class="didactic-box">
-                        <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">💡 Aspecte didàctic:</strong>
-                        <span>${el.desc}</span>
+                    <!-- Columna dreta: Els 3 àtoms de Bohr comparatius -->
+                    <div class="bohr-trio-box">
+                        ${bohrTrioHTML}
                     </div>
                 </div>
             `;
         }
 
         function setupEvents() {
-            // Commutació de Tema Lluminós / Fosc
             const themeBtn = document.getElementById('themeToggle');
             const sunIcon = document.getElementById('sunIcon');
             const moonIcon = document.getElementById('moonIcon');
+            const themeLabel = document.getElementById('themeLabel');
 
             themeBtn.addEventListener('click', () => {
                 const isDark = document.documentElement.classList.toggle('dark');
                 sunIcon.classList.toggle('hidden', !isDark);
                 moonIcon.classList.toggle('hidden', isDark);
+                themeLabel.textContent = isDark ? 'Mode clar' : 'Mode fosc';
             });
 
-            // Commutació de Vista
             const viewBtn = document.getElementById('viewToggleBtn');
             const traditionalView = document.getElementById('traditionalView');
             const linearView = document.getElementById('linearView');
